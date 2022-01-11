@@ -55,16 +55,7 @@
                 v-model="currentStagiaire.discord"
                 />
             </div>
-            <!-- <div class="form-group">
-                <label><strong>Status: {{currentStagiaire.published ? "publié" : "en attente"}}</strong></label>
-            </div> -->
         </form>
-        <!-- <button class="badge badge-primary mr-2" v-if="currentStagiaire.published" @click="updatePublished(false)">
-            Dépublier
-        </button>
-        <button class="badge badge-primary mr-2" v-else @click="updatePublished(true)">
-            Publier
-        </button> -->
         <button class="badge badge-danger mr-2" @click="deleteStagiaire">
             Supprimer
         </button>
@@ -75,7 +66,7 @@
     </div>
     <div v-else>
         <br>
-        <p>Cliquez sur un Stagiaire Por Favor</p>
+        <p>Cliquez sur un stagiaire Por Favor</p>
     </div>
 </template>
 
@@ -119,7 +110,7 @@
                 };
                 StagiaireDataService.update(this.currentStagiaire.key, data).then(
                     () => {
-                        this.message = "L'Stagiaire a bien été MÀJ.";
+                        this.message = "Le stagiaire a bien été MÀJ.";
                     }
                 ).catch(
                     (error) => console.log(error)
@@ -135,7 +126,7 @@
         },
         mounted() {
             this.message = "";
-            this.currentStagiaire = {...this.Stag};
+            this.currentStagiaire = {...this.stagiaire};
         }
     }
 </script>

@@ -2,18 +2,23 @@
     <div class="list row">
         <div class="col-md-6">
             <h4>Liste des stagiares</h4>
-            <ul class="list-group">
-                <li
-                class="list-group-item"
-                :class="{ active: index == currentIndex }"
-                v-for="(stagiaire, index) in stagiaires"
-                :key="stagiaire"
-                @click="setActiveStagiaire(stagiaire, index)"
-                >
-                    {{index}} {{ stagiaire.prenom }} {{ stagiaire.nom}}
-                    <img :src="stagiaire.image" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;">
-                </li>
-            </ul>
+                <div class="container">
+                    <div class="row text-center">
+                                <!-- {{index}} {{ stagiaire.prenom }} {{ stagiaire.nom}}
+                                <img :src="stagiaire.image" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%;"> -->
+                        <div class="col-xl-6 col-sm-6 mb-5" :class="{ active: index == currentIndex }"
+                        v-for="(stagiaire, index) in stagiaires"
+                        :key="stagiaire"
+                        @click="setActiveStagiaire(stagiaire, index)">
+                            <div class="bg-white rounded shadow-sm py-5 px-4"><img :src="stagiaire.image" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                                <h5 class="mb-0">{{index}} - {{stagiaire.prenom}} {{stagiaire.nom}}</h5><span class="small text-lowercase text-muted">{{stagiaire.email}}</span>
+                                <ul class="social mb-0 list-inline mt-3">
+                                    <li class="list-inline-item"><a :href="stagiaire.discord" class="social-link"><img src="../../public/img/discord-brands.svg"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <button class="m-3 btn btn-sm btn-danger" @click="removeAllStagiaires">
                 Tout Supprimer
             </button>

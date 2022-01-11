@@ -21,6 +21,24 @@
                 />
             </div>
             <div class="form-group">
+                <label for="description">Image</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="image"
+                    v-model="currentArticle.image"
+                />
+            </div>
+            <div class="form-group">
+                <label for="description">Author</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="author"
+                    v-model="currentArticle.author"
+                />
+            </div>
+            <div class="form-group">
                 <label><strong>Status: {{currentArticle.published ? "publié" : "en attente"}}</strong></label>
             </div>
         </form>

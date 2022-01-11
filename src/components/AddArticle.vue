@@ -22,6 +22,26 @@
                 v-model="article.description"
                 />
             </div>
+            <div class="form-group">
+                <label for="image">Image</label>
+                <input
+                class="form-control"
+                id="image"
+                required
+                name="image"
+                v-model="article.image"
+                />
+            </div>
+            <div class="form-group">
+                <label for="author">Auteur</label>
+                <input
+                class="form-control"
+                id="author"
+                required
+                name="author"
+                v-model="article.author"
+                />
+            </div>
         <button class="btn btn-success" @click="saveArticle">Ajouter</button>
         </div>
         <div v-else>
@@ -41,6 +61,8 @@
                 article: {
                     title: "",
                     description: "",
+                    image: "",
+                    author: "",
                     published:  false
                 },
                 submitted: false,
@@ -51,6 +73,9 @@
                 let data = {
                     title: this.article.title,
                     description: this.article.description,
+                    image: this.article.image,
+                    author: this.article.author,
+                    date: new Date.now(),
                     published: false
                 };
                 ArticleDataService.create(data).then(
