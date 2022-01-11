@@ -35,6 +35,16 @@ const routes = [
         path: "/sessions/add",
         name: "add-sessions",
         component:  () => import ("./components/AddSession")
+    },
+    {
+        alias: "/cours",
+        name: "cours",
+        component:  () => import ("./components/CoursList")
+    },
+    {
+        path: "/cours/add",
+        name: "add-cours",
+        component:  () => import ("./components/AddCours")
     }
 ];
 

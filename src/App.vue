@@ -13,6 +13,9 @@
                 <router-link to="/sessions" class="nav-link">Session</router-link>
             </li>
             <li class="nav-item">
+                <router-link to="/cours" class="nav-link">Cours</router-link>
+            </li>
+            <li class="nav-item">
                 <router-link to="/articles/add" class="nav-link">Ajouter article</router-link>
             </li>
             <li class="nav-item">
@@ -20,6 +23,9 @@
             </li>
             <li class="nav-item">
                 <router-link to="/sessions/add" class="nav-link">Ajouter session</router-link>
+            </li>
+            <li class="nav-item">
+                <router-link to="/cours/add" class="nav-link">Ajouter cours</router-link>
             </li>
         </div>
         </nav>
