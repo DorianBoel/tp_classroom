@@ -2,120 +2,111 @@
     <div class="submit-form">
         <div v-if="!submitted">
             <div class="form-group">
-                <label for="title">Prénom</label>
+                <label for="title">Nom</label>
                 <input
                 type="text"
-                class="form-control"
-                id="prenom"
-                required
-                name="prenom"
-                v-model="stagiaire.prenom"
-                />
-            </div>
-            <div class="form-group">
-                <label for="nom">Nom</label>
-                <input
                 class="form-control"
                 id="nom"
                 required
                 name="nom"
-                v-model="stagiaire.nom"
+                v-model="session.nom"
                 />
             </div>
             <div class="form-group">
-                <label for="born">Date de naissance</label>
+                <label for="nbStagiaires">Nombre de stagiaires</label>
+                <input
+                type="number"
+                class="form-control"
+                id="nbStagiaires"
+                required
+                name="nbStagiaires"
+                v-model="session.nbStagiaires"
+                />
+            </div>
+            <div class="form-group">
+                <label for="dateDebut">Date de début</label>
                 <input
                 class="form-control"
-                id="born"
+                id="dateDebut"
                 type="date"
                 required
-                name="born"
-                v-model="stagiaire.born"
+                name="dateDebut"
+                v-model="session.dateDebut"
                 />
             </div>
             <div class="form-group">
-                <label for="image">Image</label>
+                <label for="dateFin">Date de fin</label>
                 <input
                 class="form-control"
-                id="image"
-                name="image"
-                v-model="stagiaire.image"
+                id="dateFin"
+                type="date"
+                required
+                name="dateFin"
+                v-model="session.dateFin"
                 />
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="blason">Image du blason</label>
                 <input
                 class="form-control"
-                id="email"
-                type="email"
-                name="email"
-                v-model="stagiaire.email"
+                id="blason"
+                type="text"
+                name="blason"
+                v-model="session.blason"
                 />
             </div>
-            <div class="form-group">
-                <label for="discord">Discord</label>
-                <input
-                class="form-control"
-                id="discord"
-                name="discord"
-                v-model="stagiaire.discord"
-                />
-            </div>
-        <button class="btn btn-success" @click="saveStagiaire">Ajouter</button>
+        <button class="btn btn-success" @click="saveSession">Ajouter</button>
         </div>
         <div v-else>
-            <h4>Profil de stagiare ajouté en BDD avec Succès</h4>
-            <button class="btn btn-success" @click="newStagiaire">Ajouter un autre profil</button>
+            <h4>Session ajoutée en BDD avec Succès</h4>
+            <button class="btn btn-success" @click="newSession">Ajouter une autre session</button>
         </div>
     </div>
 </template>
 
 <script>
-    import StagiaireDataService from '../services/StagiaireDataService';
+    import SessionDataService from '../services/SessionDataService';
 
     export default {
-        name: "add-stagiaire",
+        name: "add-session",
         data() {
             return {
-                stagiaire: {
-                    prenom: "",
+                session: {
                     nom: "",
-                    born:  "",
-                    image: "",
-                    email: "",
-                    discord: ""
+                    nbStagiaires: "",
+                    dateDebut:  "",
+                    dateFin: "",
+                    blason: ""
                 },
                 submitted: false,
             };
         },
         methods: {
-            saveStagiaire() {
+            saveSession() {
                 let data = {
-                    prenom: this.stagiaire.prenom,
-                    nom: this.stagiaire.nom,
-                    born:  this.stagiaire.born,
-                    image: this.stagiaire.image,
-                    email: this.stagiaire.email,
-                    discord:this.stagiaire.discord
+                    nom: this.session.nom,
+                    nbStagiaires: this.session.nbStagiaires,
+                    dateDebut:  this.session.dateDebut,
+                    dateFin: this.session.dateFin,
+                    blason: this.session.blason
                 };
-                StagiaireDataService.create(data).then(
+                SessionDataService.create(data).then(
                     () => {
-                        console.log("Stagiaire créé avec succès");
+                        console.log("Session créée avec succès");
                         this.submitted = true;
                     }
                 ).catch(
                     (error) => console.log(error)
                 );
             },
-            newstagiaire() {
+            newSession() {
                 this.submitted = false;
-                this.stagiaire = {
-                    prenom: "",
+                this.session = {
                     nom: "",
-                    born:  "",
-                    image: "",
-                    email: "",
-                    discord: ""
+                    nbStagiaires: "",
+                    dateDebut:  "",
+                    dateFin: "",
+                    blason: ""
                 };
             }
         }

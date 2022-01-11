@@ -4,19 +4,22 @@
         <router-link to="/" class="navbar-brand">Le super BLOG</router-link>
         <div class="navbar-nav mr-auto">
             <li class="nav-item">
-            <router-link to="/article" class="nav-link">Articles</router-link>
+                <router-link to="/articles" class="nav-link">Articles</router-link>
             </li>
             <li class="nav-item">
-            <router-link to="/stagiaires" class="nav-link">Stagiaires</router-link>
+                <router-link to="/stagiaires" class="nav-link">Stagiaires</router-link>
             </li>
             <li class="nav-item">
-            <router-link to="/add/article" class="nav-link">Ajouter article</router-link>
+                <router-link to="/sessions" class="nav-link">Session</router-link>
             </li>
             <li class="nav-item">
-            <router-link to="/add/stagiaires" class="nav-link">Ajouter stagiaire</router-link>
+                <router-link to="/articles/add" class="nav-link">Ajouter article</router-link>
             </li>
             <li class="nav-item">
-            <router-link to="/add/session" class="nav-link">Ajouter session</router-link>
+                <router-link to="/stagiaires/add" class="nav-link">Ajouter stagiaire</router-link>
+            </li>
+            <li class="nav-item">
+                <router-link to="/sessions/add" class="nav-link">Ajouter session</router-link>
             </li>
         </div>
         </nav>

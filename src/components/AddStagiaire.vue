@@ -107,7 +107,7 @@
                     (error) => console.log(error)
                 );
             },
-            newstagiaire() {
+            newStagiaire() {
                 this.submitted = false;
                 this.stagiaire = {
                     prenom: "",
