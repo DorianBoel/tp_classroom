@@ -23,6 +23,11 @@ const routes = [
         name: "add-stagiaires",
         component:  () => import ("./components/AddStagiaire")
     },
+    {
+        path: "/add/session",
+        name: "add-session",
+        component:  () => import ("./components/AddSession")
+    },
 
 ];
 

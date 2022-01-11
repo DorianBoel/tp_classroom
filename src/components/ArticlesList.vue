@@ -10,7 +10,10 @@
                 :key="index"
                 @click="setActiveArticle(article, index)"
                 >
-                    {{ article.title }}
+                    <img :src="article.image" class="img-fluid mb-3 img-thumbnail">
+                    {{ article.title }} 
+                    <small>Publié par {{ article.author }} le {{ article.date }}</small>
+                    
                 </li>
             </ul>
             <button class="m-3 btn btn-sm btn-danger" @click="removeAllArticles">
@@ -54,6 +57,9 @@
                             key: key,
                             title: data.title,
                             description: data.description,
+                            image: data.image,
+                            author: data.author,
+                            date: data.date,
                             published: data.published
                         });
                     } 

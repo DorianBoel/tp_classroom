@@ -75,7 +75,7 @@
                     description: this.article.description,
                     image: this.article.image,
                     author: this.article.author,
-                    date: new Date.now(),
+                    date: new Date(Date.now()).toLocaleDateString(),
                     published: false
                 };
                 ArticleDataService.create(data).then(

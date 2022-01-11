@@ -94,7 +94,9 @@
             updateArticle() {
                 const data = {
                     title: this.currentArticle.title,
-                    description: this.currentArticle.description
+                    description: this.currentArticle.description,
+                    image: this.currentArticle.image,
+                    author: this.currentArticle.author
                 };
                 ArticleDataService.update(this.currentArticle.key, data).then(
                     () => {
