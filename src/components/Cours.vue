@@ -81,23 +81,13 @@
             }
         },
         methods: { 
-            updatePublished(status) {
-                CoursDataService.update(this.currentCours.key, { published: status }).then(
-                    () => {
-                        this.currentCours.published = status;
-                        this.message = "Le status a bien été MÀJ."
-                    }
-                ).catch(
-                    (error) => console.log(error)
-                );
-            },
             updateCours() {
                 const data = {
-                    image: this.cours.image,
-                    codeSource: this.cours.codeSource,
-                    texte: this.cours.texte,
-                    author: this.cours.author,
-                    categorie: this.cours.categorie
+                    image: this.currentCours.image,
+                    codeSource: this.currentCours.codeSource,
+                    texte: this.currentCours.texte,
+                    author: this.currentCours.author,
+                    categorie: this.currentCours.categorie
                 };
                 CoursDataService.update(this.currentCours.key, data).then(
                     () => {
